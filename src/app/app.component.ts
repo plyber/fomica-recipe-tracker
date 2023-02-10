@@ -8,22 +8,8 @@ import { CardService } from './services/firebase.service'
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'fomica';
   card: CardModel[] | undefined;
-
-  constructor(private cardService: CardService) { }
-
-  onGetCards(): void {
-    this.cardService
-      .getCards()
-      .subscribe(
-        (response: any) => console.log(response)
-      )
-  }
-
-  ngOnInit(): void {
-    this.onGetCards();
-  }
+  
 }
-

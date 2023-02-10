@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardModel } from '../../models/card.model'
 import { CardService } from '../../services/firebase.service';
 
@@ -10,21 +10,8 @@ import { CardService } from '../../services/firebase.service';
 
 export class RecipeCardComponent {
 
-  @Input() card: CardModel[] = [{
-    id: 1,
-    cookTime: 55,
-    description: 'Insert long winded descripti here',
-    title: 'Tasty Carbonara',
-  }];
+  @Input() card!: CardModel;
 
-  constructor(private cardService: CardService) {
-  }
-
-
-
-  // postCards():void{
-  //   this.cardService.postCards()
-  // }
 
 }
 
