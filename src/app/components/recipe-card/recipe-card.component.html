@@ -1,13 +1,14 @@
 <div class="card-container">
 <div class="top-div">
-
 </div>
 <div class="bot-div">
   <div class="title">
-    <h4>{{card.title}}</h4>
+    <h4>Recipe Title:{{card[0].title}}</h4>
+    <h5>Recipe ID: {{card[0].id}}</h5>
+  <span>CookTime: {{card[0].cookTime}} Minutes</span>
   </div>
   <div class="description">
-    <p>{{card.description}}</p>
+    <p>Description:{{card[0].description}}</p>
   </div>
   <div class="ingredient-container" >
   </div>

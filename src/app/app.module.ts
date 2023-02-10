@@ -8,15 +8,16 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { RecipeCardComponent } from './recipe-card/recipe-card.component'
+import { RecipeCardComponent } from './components/recipe-card/recipe-card.component'
 import { FormsModule } from '@angular/forms';
-import { ContainerComponent } from './container/container.component';
+import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeCardComponent,
     ContainerComponent,
+    RecipeCardComponent
   ],
   imports: [
     BrowserModule,

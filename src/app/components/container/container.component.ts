@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
+import { Component, Input } from '@angular/core';
+
+
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent {
-  
+
 }
