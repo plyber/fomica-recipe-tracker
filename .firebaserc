@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fomica-recipe-tracker": {
+      "hosting": {
+        "fomica": [
+          "fomica-recipe-tracker"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fomica-recipe-tracker"
+  }
+}
