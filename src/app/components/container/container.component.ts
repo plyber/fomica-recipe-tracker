@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CardModel } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/firebase.service';
+import { RecipeCardComponent } from '../recipe-card/recipe-card.component'
 
 @Component({
   selector: 'app-container',
@@ -7,26 +9,23 @@ import { CardService } from 'src/app/services/firebase.service';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  cards!: any[];
-  
-  constructor( private cardService: CardService)
-  {}
+  cards: CardModel[] = [];
+  id: number = 0;
+  cookTime: number = 0;
+  description: string = '';
+  title: string = '';
 
-  getCards() {
-    this.cardService.getCards().subscribe( (response: any) => {
-      console.log('TEST', response)
-      if (response !== null){
-        this.cards = Object.keys(response).map(id => {
-          // @ts-ignore
-          return { id: id, ...response[id] }});
-      } else {
-        this.cards = [];
-      }
-      console.log('CARDS', this.cards)
-    });
-  }
+  constructor(private cardService: CardService) { }
 
-  ngOnInit(): void {
+  getCards(): void {
+      this.cardService.getCards().subscribe(
+        response => {
+          console.log(response);
+        }
+      ); 
+    }
+
+  ngOnInit() {
     this.getCards();
   }
 

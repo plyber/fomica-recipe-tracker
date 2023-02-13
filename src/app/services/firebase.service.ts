@@ -8,12 +8,13 @@ import { CardModel } from '../models/card.model';
 })
 
 export class CardService {
-  
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<CardModel[]> {
-      return this.http.get<CardModel[]>('https://fomica-recipe-tracker-default-rtdb.europe-west1.firebasedatabase.app/cards.json?print=pretty')
+  
+  getCards(){
+    return this.http.get('https://fomica-recipe-tracker-default-rtdb.europe-west1.firebasedatabase.app/cards.json?print=pretty')
     }
+    
   postCards(){}
 }
 

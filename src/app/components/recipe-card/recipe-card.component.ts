@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CardModel } from '../../models/card.model'
-import { CardService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -10,7 +9,14 @@ import { CardService } from '../../services/firebase.service';
 
 export class RecipeCardComponent {
 
-  @Input() card!: CardModel;
+
+  @Input() card: CardModel={
+    id: 0,
+    cookTime: 0,
+    description: 'str',
+    title: 'str',
+  };
+
 
 
 }

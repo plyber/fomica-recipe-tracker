@@ -15,7 +15,6 @@ import { ContainerComponent } from './components/container/container.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeCardComponent,
     ContainerComponent,
     RecipeCardComponent
   ],
