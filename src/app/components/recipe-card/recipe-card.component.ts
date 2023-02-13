@@ -8,16 +8,6 @@ import { CardModel } from '../../models/card.model'
 })
 
 export class RecipeCardComponent {
-
-
-  @Input() card: CardModel={
-    id: 0,
-    cookTime: 0,
-    description: 'str',
-    title: 'str',
-  };
-
-
-
+  @Input() card!: CardModel;
 }
 
