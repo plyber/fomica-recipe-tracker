@@ -1,31 +1,33 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { CardModel } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss']
+  styleUrls: [ './container.component.scss' ]
 })
 export class ContainerComponent implements OnInit {
-  cards: CardModel[] = [{
-    id: 0,
-    cookTime: 0,
-    description: '',
-    title: '',
-  }];
+  cards: CardModel[] = [];
 
   constructor(private cardService: CardService) { }
 
-  OnGetCards(): void {
+  getCards(): void {
     this.cardService.getCards().subscribe(
-      res => this.cards = res
-      )
-    }
+      response => {
+        if (response !== null){
+          this.cards = Object.keys(response).map(id => {
+            // @ts-ignore
+            return { id: id, ...response[id] }});
+        } else {
+          this.cards = [];
+        }
+      }
+    );
+  }
 
   ngOnInit() {
-    this.OnGetCards();
-    console.log(this.cards)
- }
+    this.getCards();
+  }
+
 }
