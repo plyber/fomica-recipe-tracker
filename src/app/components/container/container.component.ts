@@ -5,7 +5,7 @@ import { CardService } from 'src/app/services/firebase.service';
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss']
+  styleUrls: [ './container.component.scss' ]
 })
 export class ContainerComponent implements OnInit {
   cards: CardModel[] = [];
@@ -15,11 +15,10 @@ export class ContainerComponent implements OnInit {
   getCards(): void {
     this.cardService.getCards().subscribe(
       response => {
-        if (response !== null) {
+        if (response !== null){
           this.cards = Object.keys(response).map(id => {
             // @ts-ignore
-            return { id: id, ...response[id] }
-          });
+            return { id: id, ...response[id] }});
         } else {
           this.cards = [];
         }
@@ -27,7 +26,8 @@ export class ContainerComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getCards();
-  }
+    console.log(this.cards)
+ }
 }
