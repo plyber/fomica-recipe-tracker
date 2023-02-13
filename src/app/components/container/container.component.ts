@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CardModel } from 'src/app/models/card.model';
 import { CardService } from 'src/app/services/firebase.service';
-import { RecipeCardComponent } from '../recipe-card/recipe-card.component'
 
 @Component({
   selector: 'app-container',
@@ -9,24 +9,23 @@ import { RecipeCardComponent } from '../recipe-card/recipe-card.component'
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  cards: CardModel[] = [];
-  id: number = 0;
-  cookTime: number = 0;
-  description: string = '';
-  title: string = '';
+  cards: CardModel[] = [{
+    id: 0,
+    cookTime: 0,
+    description: '',
+    title: '',
+  }];
 
   constructor(private cardService: CardService) { }
 
-  getCards(): void {
-      this.cardService.getCards().subscribe(
-        response => {
-          console.log(response);
-        }
-      ); 
+  OnGetCards(): void {
+    this.cardService.getCards().subscribe(
+      res => this.cards = res
+      )
     }
 
   ngOnInit() {
-    this.getCards();
-  }
-
+    this.OnGetCards();
+    console.log(this.cards)
+ }
 }
