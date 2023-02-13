@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CardModel } from './models/card.model';
-import { CardService } from './services/firebase.service'
 
 @Component({
   selector: 'app-root',
@@ -10,6 +8,5 @@ import { CardService } from './services/firebase.service'
 
 export class AppComponent{
   title = 'fomica';
-  card: CardModel[] | undefined;
   
 }

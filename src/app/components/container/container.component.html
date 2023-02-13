@@ -1,1 +1,3 @@
-  <app-recipe-card></app-recipe-card>
+<div *ngFor="let card of cards">
+  <app-recipe-card [card]="card"></app-recipe-card>
+</div>

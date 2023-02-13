@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { CardModel } from '../models/card.model';
 import { Observable } from 'rxjs';
 
@@ -11,9 +11,9 @@ export class CardService {
   constructor(private http: HttpClient) { }
 
   
-  getCards():Observable<CardModel[]>{
+  getCards(): Observable<CardModel[]> {
     return this.http.get<CardModel[]>('https://fomica-recipe-tracker-default-rtdb.europe-west1.firebasedatabase.app/cards.json?print=pretty')
-    }
+  }
     
   postCards(){}
 }
