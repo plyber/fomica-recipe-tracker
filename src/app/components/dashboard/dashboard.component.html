@@ -1,0 +1,13 @@
+<div class="recipe-input">
+  <form #recipeForm="ngForm" (ngSubmit)="postData(recipeForm.value)">
+    <input class="title" type="" name="title" ngModel />
+    <div class="cookTime-div">
+      <input class="cookTime" type="number" name="cookTime" ngModel /><p class="time-label">MINUTES</p>
+    </div>
+    <input class="description" type="text" name="description" ngModel />
+    <!-- <button type="submit" (click)="postData(title,cookTime,description)">Save Recipe!</button> -->
+    <div class="button-div">
+      <input class="button" type="submit" value="SAVE!">
+    </div>
+  </form>
+</div>

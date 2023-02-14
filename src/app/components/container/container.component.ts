@@ -13,7 +13,7 @@ export class ContainerComponent implements OnInit {
   constructor(private cardService: CardService) { }
 
   getCards(): void {
-    this.cardService.getCards().subscribe(
+    this.cardService.onGetCards().subscribe(
       response => {
         if (response !== null){
           this.cards = Object.keys(response).map(id => {

@@ -1,0 +1,92 @@
+.recipe-input {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  color: rgb(53, 29, 10);
+  background-color: rgb(255, 253, 249);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 25vh;
+  word-wrap: break-word;
+  filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.05))
+}
+
+.title,
+.cookTime,
+.description {
+
+  width: 100%;
+  box-sizing: border-box;
+  border: 0px black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: rgb(53, 29, 10);
+  font-size: 12px;
+  font-weight: 900;
+  background-color: antiquewhite;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.cookTime {
+  text-transform: uppercase;
+  border-radius: 0;
+  width:5vh;
+}
+
+.description {
+  word-break: break-all;
+  height: 5vh;
+  background-color: rgb(255, 253, 249);
+  font-weight: 400;
+  max-height: none;
+  text-transform: lowercase;
+  border-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 100%;
+
+  color: rgb(53, 29, 10);
+  font-size: 12px;
+  font-weight: 900;
+  background-color: rgb(255, 253, 249);
+  border: 0px black;
+  font-size: 16px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 12px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: antiquewhite;
+  color: white;
+  color: rgb(53, 29, 10);
+}
+
+.cookTime-div {
+  background-color: antiquewhite;
+  display: flex;
+}
+
+.time-label {
+  padding-right:10px;
+  padding-left:10px;
+  color: rgb(53, 29, 10);
+  font-size: 12px;
+  font-weight: 900;
+}

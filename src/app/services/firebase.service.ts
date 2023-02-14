@@ -10,10 +10,18 @@ import { CardModel } from '../models/card.model';
 export class CardService {
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<CardModel[]> {
+  onGetCards(): Observable<CardModel[]> {
     return this.http.get<CardModel[]>('https://fomica-recipe-tracker-default-rtdb.europe-west1.firebasedatabase.app/cards.json?print=pretty')
   }
 
-  postCards() {}
-}
+  onPostCards(postData: { title: string; description: string; cookTime: number;}) {
+    // Send Http request
+         this.http.post(
+          'https://fomica-recipe-tracker-default-rtdb.europe-west1.firebasedatabase.app/cards.json?print=pretty',
+          postData)
+          .subscribe((response)=>{
+            console.log(response)
+          })
+    }
+  }
 
